@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TP05-Android_permissions</string>
+
+    <string name="gps_pending">Vous devez autoriser l\'accès au GPS pour que l\'on puisse récupérer votre position</string>
+    <string name="gps_valid">Vous avez bien autorisé l\'accès à votre localisation</string>
+    <string name="gps_error">Vous n\'avez pas autorisé l\accès à votre localisation</string>
+    <string name="gps_errorPlus">Bon et bien tant pis</string>
+    <string name="gps_validPlus">Il n\'y a que les imbéciles qui ne changent pas d'avis</string>
+
+    <string name="gps_button">Autoriser l\'accès</string>
+</resources>
