@@ -8,6 +8,7 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.example.tp05_android_permissions.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -56,9 +57,14 @@ class MainActivity : AppCompatActivity() {
         binding.gpsButton.setOnClickListener(
             View.OnClickListener {
 
-                // ContextCompat.checkSelfPermission(baseContext, Manifest.permission.ACCESS_FINE_LOCATION)
-
-                requestFineLocalisationPermission()
+                if (ContextCompat.checkSelfPermission(baseContext, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    // Permission is already available, start camera preview
+                    startLocalisation()
+                } else {
+                    // Permission is missing and must be requested.
+                    println("Je redemande")
+                    requestFineLocalisationPermission()
+                }
             }
         )
     }
